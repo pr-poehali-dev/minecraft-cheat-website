@@ -101,14 +101,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen gradient-bg">
-      <div 
-        className="fixed inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.08) 50%, rgba(139, 92, 246, 0.08) 100%)',
-          backgroundSize: '400% 400%',
-          animation: 'gradient-shift 15s ease infinite'
-        }}
-      />
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -335,10 +327,10 @@ const Index = () => {
             <Card className="bg-card/50 backdrop-blur border-border hover-glow hover:scale-105 transition-all">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 bg-secondary/20 rounded-2xl flex items-center justify-center">
-                  <Icon name="MessageCircle" size={32} className="text-secondary" />
+                  <Icon name="Globe" size={32} className="text-secondary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Discord</h3>
-                <p className="text-muted-foreground">discord.gg/astrix</p>
+                <h3 className="text-xl font-bold mb-2">Сайт</h3>
+                <p className="text-muted-foreground">astrix.pw</p>
               </CardContent>
             </Card>
           </div>
@@ -348,7 +340,8 @@ const Index = () => {
       <footer className="py-12 px-4 border-t border-border relative z-10">
         <div className="container mx-auto text-center text-muted-foreground">
           <p className="mb-2">© 2024 ASTRIX. Все права защищены.</p>
-          <p className="text-sm">Чит предназначен только для образовательных целей</p>
+          <p className="text-sm mb-2">astrix.pw | astrix.ru</p>
+          <p className="text-xs">Чит предназначен только для образовательных целей</p>
         </div>
       </footer>
     </div>
