@@ -104,20 +104,8 @@ const Index = () => {
       <div 
         className="fixed inset-0 pointer-events-none"
         style={{
-          background: `
-            linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.03) 30%, rgba(139, 92, 246, 0.03) 70%, transparent 70%),
-            linear-gradient(-45deg, transparent 30%, rgba(59, 130, 246, 0.03) 30%, rgba(59, 130, 246, 0.03) 70%, transparent 70%)
-          `,
-          backgroundSize: '60px 60px, 60px 60px',
-          backgroundPosition: '0 0, 30px 30px',
-          animation: 'gradient-shift 20s linear infinite'
-        }}
-      />
-      <div 
-        className="fixed inset-0 pointer-events-none opacity-50"
-        style={{
-          background: 'radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
-          backgroundSize: '200% 200%',
+          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.08) 50%, rgba(139, 92, 246, 0.08) 100%)',
+          backgroundSize: '400% 400%',
           animation: 'gradient-shift 15s ease infinite'
         }}
       />
