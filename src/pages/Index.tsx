@@ -55,20 +55,43 @@ const Index = () => {
       name: "Месяц", 
       price: "350₽", 
       period: "30 дней", 
-      features: ["Все функции", "Обновления", "VIP поддержка"] 
+      features: ["Все функции", "Обновления", "Поддержка"] 
     },
     { 
       name: "Год", 
       price: "500₽", 
       period: "365 дней", 
-      features: ["Все функции", "Обновления", "VIP поддержка", "Бонусы"] 
+      features: ["Все функции", "Обновления", "Поддержка"] 
     },
     { 
       name: "Навсегда", 
       price: "650₽", 
       period: "Пожизненно", 
-      features: ["Все функции", "Обновления", "VIP поддержка", "Все бонусы", "Приоритет в очереди"],
+      features: ["Все функции", "Обновления", "Поддержка", "Все бонусы"],
       highlight: true
+    }
+  ];
+
+  const premiumFeatures = [
+    {
+      icon: "Rocket",
+      title: "Обновления первыми",
+      desc: "Получайте доступ к новым функциям до всех остальных"
+    },
+    {
+      icon: "Plus",
+      title: "Больше модулей",
+      desc: "Эксклюзивные функции, недоступные в базовой версии"
+    },
+    {
+      icon: "Crown",
+      title: "VIP статус",
+      desc: "Приоритетная поддержка и особые привилегии"
+    },
+    {
+      icon: "Settings",
+      title: "Расширенные настройки",
+      desc: "Гибкая настройка всех модулей под себя"
     }
   ];
 
@@ -79,11 +102,23 @@ const Index = () => {
   return (
     <div className="min-h-screen gradient-bg">
       <div 
-        className="fixed inset-0 opacity-40 pointer-events-none"
+        className="fixed inset-0 pointer-events-none"
         style={{
-          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))',
-          backgroundSize: '400% 400%',
-          animation: 'gradient-shift 8s ease infinite'
+          background: `
+            linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.03) 30%, rgba(139, 92, 246, 0.03) 70%, transparent 70%),
+            linear-gradient(-45deg, transparent 30%, rgba(59, 130, 246, 0.03) 30%, rgba(59, 130, 246, 0.03) 70%, transparent 70%)
+          `,
+          backgroundSize: '60px 60px, 60px 60px',
+          backgroundPosition: '0 0, 30px 30px',
+          animation: 'gradient-shift 20s linear infinite'
+        }}
+      />
+      <div 
+        className="fixed inset-0 pointer-events-none opacity-50"
+        style={{
+          background: 'radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
+          backgroundSize: '200% 200%',
+          animation: 'gradient-shift 15s ease infinite'
         }}
       />
 
@@ -93,6 +128,7 @@ const Index = () => {
           <div className="hidden md:flex gap-6">
             <button onClick={() => scrollToSection('features')} className="hover:text-primary transition">Функции</button>
             <button onClick={() => scrollToSection('advantages')} className="hover:text-primary transition">Преимущества</button>
+            <button onClick={() => scrollToSection('premium')} className="hover:text-secondary transition">PREMIUM</button>
             <button onClick={() => scrollToSection('prices')} className="hover:text-primary transition">Цены</button>
             <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition">Контакты</button>
           </div>
@@ -177,6 +213,58 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="premium" className="py-24 px-4 relative z-10 bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4 px-6 py-2 bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 rounded-full">
+              <span className="text-lg font-bold gradient-text">👑 PREMIUM</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+              Премиум возможности
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Расширенный функционал и эксклюзивные преимущества для продвинутых игроков
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {premiumFeatures.map((feature, index) => (
+              <Card 
+                key={index} 
+                className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur border-primary/30 hover-glow hover:scale-105 transition-all duration-300"
+              >
+                <CardContent className="p-8 flex gap-6">
+                  <div className="w-16 h-16 flex-shrink-0 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center">
+                    <Icon name={feature.icon} size={32} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.desc}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Card className="inline-block bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 border-2 border-primary/50 hover-glow">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <Icon name="Crown" size={40} className="text-primary" />
+                  <div className="text-left">
+                    <h3 className="text-2xl font-bold gradient-text">PREMIUM доступ</h3>
+                    <p className="text-muted-foreground">Добавляется автоматически при покупке</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  * PREMIUM функции включены во все тарифы начиная с "Неделя"
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
