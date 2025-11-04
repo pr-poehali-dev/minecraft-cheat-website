@@ -40,22 +40,35 @@ const Index = () => {
   const prices = [
     { 
       name: "День", 
-      price: "99₽", 
+      price: "199₽", 
       period: "1 день", 
       features: ["Все функции", "Обновления", "Поддержка"] 
     },
     { 
       name: "Неделя", 
-      price: "399₽", 
+      price: "249₽", 
       period: "7 дней", 
       features: ["Все функции", "Обновления", "Приоритетная поддержка"],
       popular: true
     },
     { 
       name: "Месяц", 
-      price: "999₽", 
+      price: "350₽", 
       period: "30 дней", 
+      features: ["Все функции", "Обновления", "VIP поддержка"] 
+    },
+    { 
+      name: "Год", 
+      price: "500₽", 
+      period: "365 дней", 
       features: ["Все функции", "Обновления", "VIP поддержка", "Бонусы"] 
+    },
+    { 
+      name: "Навсегда", 
+      price: "650₽", 
+      period: "Пожизненно", 
+      features: ["Все функции", "Обновления", "VIP поддержка", "Все бонусы", "Приоритет в очереди"],
+      highlight: true
     }
   ];
 
@@ -66,10 +79,10 @@ const Index = () => {
   return (
     <div className="min-h-screen gradient-bg">
       <div 
-        className="fixed inset-0 opacity-30 pointer-events-none"
+        className="fixed inset-0 opacity-40 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)',
-          backgroundSize: '200% 200%',
+          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))',
+          backgroundSize: '400% 400%',
           animation: 'gradient-shift 8s ease infinite'
         }}
       />
@@ -176,17 +189,24 @@ const Index = () => {
           <p className="text-center text-muted-foreground mb-16 text-lg">
             Выберите подходящий тариф
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {prices.map((plan, index) => (
               <Card 
                 key={index} 
                 className={`bg-card/50 backdrop-blur border-border hover-glow hover:scale-105 transition-all duration-300 relative ${
                   plan.popular ? 'border-primary border-2' : ''
+                } ${
+                  plan.highlight ? 'border-secondary border-2 bg-gradient-to-br from-primary/10 to-secondary/10' : ''
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">
                     Популярно
+                  </div>
+                )}
+                {plan.highlight && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-full text-sm font-bold">
+                    🔥 Лучшее
                   </div>
                 )}
                 <CardContent className="p-8 text-center">
