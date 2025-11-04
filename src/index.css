@@ -65,27 +65,39 @@
 
   .gradient-text {
     background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradient-shift 8s ease infinite;
   }
 
   .hover-glow {
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .hover-glow:hover {
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+    transform: translateY(-2px);
   }
 
   .price-card-glow {
     box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .price-card-glow:hover {
     box-shadow:
       0 0 35px rgba(239, 68, 68, 0.5),
       0 0 60px rgba(239, 68, 68, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .animate-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 }

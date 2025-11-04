@@ -114,13 +114,13 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="text-2xl font-bold gradient-text">ASTRIX</div>
           <div className="hidden md:flex gap-6">
-            <button onClick={() => scrollToSection('features')} className="hover:text-primary transition">Функции</button>
-            <button onClick={() => scrollToSection('advantages')} className="hover:text-primary transition">Преимущества</button>
-            <button onClick={() => scrollToSection('premium')} className="hover:text-secondary transition">PREMIUM</button>
-            <button onClick={() => scrollToSection('prices')} className="hover:text-primary transition">Цены</button>
-            <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition">Контакты</button>
+            <button onClick={() => scrollToSection('features')} className="hover:text-primary transition-all duration-300 hover:scale-110">Функции</button>
+            <button onClick={() => scrollToSection('advantages')} className="hover:text-primary transition-all duration-300 hover:scale-110">Преимущества</button>
+            <button onClick={() => scrollToSection('premium')} className="hover:text-secondary transition-all duration-300 hover:scale-110">PREMIUM</button>
+            <button onClick={() => scrollToSection('prices')} className="hover:text-primary transition-all duration-300 hover:scale-110">Цены</button>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition-all duration-300 hover:scale-110">Контакты</button>
           </div>
-          <Button className="hover-glow">Купить</Button>
+          <Button className="hover-glow transition-all duration-500">Купить</Button>
         </div>
       </nav>
 
@@ -138,12 +138,12 @@ const Index = () => {
           <p className="text-lg text-muted-foreground mb-12 max-w-xl mx-auto">
             Передовой чит с лучшей оптимизацией, надёжными обходами и красивыми визуалами
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Button size="lg" className="text-lg px-8 py-6 hover-glow" onClick={() => scrollToSection('prices')}>
+          <div className="flex gap-4 justify-center flex-wrap animate-in">
+            <Button size="lg" className="text-lg px-8 py-6 hover-glow transition-all duration-500" onClick={() => scrollToSection('prices')}>
               <Icon name="ShoppingCart" className="mr-2" size={20} />
               Купить сейчас
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6" onClick={() => scrollToSection('features')}>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 transition-all duration-500 hover:bg-primary/10" onClick={() => scrollToSection('features')}>
               Узнать больше
             </Button>
           </div>
@@ -162,12 +162,12 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index} 
-                className="bg-card/50 backdrop-blur border-border hover-glow hover:scale-105 transition-all duration-300"
+                className="bg-card/50 backdrop-blur border-border hover-glow hover:scale-105 transition-all duration-500 animate-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-2xl flex items-center justify-center">
-                    <Icon name={feature.icon} size={32} className="text-primary" />
+                  <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-2xl flex items-center justify-center transition-all duration-500 hover:bg-primary/30 hover:rotate-12">
+                    <Icon name={feature.icon} size={32} className="text-primary transition-all duration-500" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground text-sm">{feature.desc}</p>
@@ -190,11 +190,11 @@ const Index = () => {
             {advantages.map((adv, index) => (
               <Card 
                 key={index} 
-                className="bg-card/50 backdrop-blur border-border hover-glow hover:scale-105 transition-all duration-300"
+                className="bg-card/50 backdrop-blur border-border hover-glow hover:scale-105 transition-all duration-500 animate-in"
               >
                 <CardContent className="p-8">
-                  <div className="w-20 h-20 mb-6 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center">
-                    <Icon name={adv.icon} size={40} className="text-white" />
+                  <div className="w-20 h-20 mb-6 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center transition-all duration-500 hover:rotate-12 hover:scale-110">
+                    <Icon name={adv.icon} size={40} className="text-white transition-all duration-500" />
                   </div>
                   <h3 className="text-2xl font-bold mb-3">{adv.title}</h3>
                   <p className="text-muted-foreground">{adv.desc}</p>
@@ -223,11 +223,11 @@ const Index = () => {
             {premiumFeatures.map((feature, index) => (
               <Card 
                 key={index} 
-                className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur border-primary/30 hover-glow hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur border-primary/30 hover-glow hover:scale-105 transition-all duration-500 animate-in"
               >
                 <CardContent className="p-8 flex gap-6">
-                  <div className="w-16 h-16 flex-shrink-0 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center">
-                    <Icon name={feature.icon} size={32} className="text-white" />
+                  <div className="w-16 h-16 flex-shrink-0 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center transition-all duration-500 hover:rotate-12 hover:scale-110">
+                    <Icon name={feature.icon} size={32} className="text-white transition-all duration-500" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
@@ -251,7 +251,7 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   Получите доступ ко всем эксклюзивным функциям
                 </p>
-                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white font-bold py-6">
+                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white font-bold py-6 transition-all duration-500 hover:scale-105">
                   <Icon name="Crown" className="mr-2" size={20} />
                   Купить PREMIUM
                 </Button>
@@ -304,7 +304,7 @@ const Index = () => {
                       </div>
                     ))}
                   </div>
-                  <Button className={`w-full hover-glow ${plan.popular ? 'bg-primary hover:bg-primary/90' : ''}`}>
+                  <Button className={`w-full hover-glow transition-all duration-500 hover:scale-105 ${plan.popular ? 'bg-primary hover:bg-primary/90' : ''}`}>
                     Купить
                   </Button>
                 </CardContent>
