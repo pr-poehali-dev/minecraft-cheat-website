@@ -251,17 +251,24 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Card className="inline-block bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 border-2 border-primary/50 hover-glow">
+            <Card className="inline-block bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 border-2 border-primary/50 hover-glow max-w-md mx-auto">
               <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <Icon name="Crown" size={40} className="text-primary" />
-                  <div className="text-left">
-                    <h3 className="text-2xl font-bold gradient-text">PREMIUM доступ</h3>
-                    <p className="text-muted-foreground">Добавляется автоматически при покупке</p>
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <Icon name="Crown" size={48} className="text-primary" />
+                  <div className="text-center">
+                    <h3 className="text-3xl font-bold gradient-text">PREMIUM</h3>
+                    <div className="text-4xl font-black text-primary mt-2">200₽</div>
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  * PREMIUM функции включены во все тарифы начиная с "Неделя"
+                <p className="text-muted-foreground mb-4">
+                  Получите доступ ко всем эксклюзивным функциям
+                </p>
+                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white font-bold py-6">
+                  <Icon name="Crown" className="mr-2" size={20} />
+                  Купить PREMIUM
+                </Button>
+                <p className="text-xs text-muted-foreground mt-4">
+                  * Или получите PREMIUM бесплатно при покупке любого тарифа от "Неделя"
                 </p>
               </CardContent>
             </Card>
