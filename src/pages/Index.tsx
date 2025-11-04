@@ -281,7 +281,7 @@ const Index = () => {
             {prices.map((plan, index) => (
               <Card 
                 key={index} 
-                className={`bg-card/50 backdrop-blur border-border hover-glow hover:scale-105 transition-all duration-300 relative ${
+                className={`bg-card/50 backdrop-blur border-border price-card-glow hover:scale-105 transition-all duration-300 relative ${
                   plan.popular ? 'border-primary border-2' : ''
                 } ${
                   plan.highlight ? 'border-secondary border-2 bg-gradient-to-br from-primary/10 to-secondary/10' : ''
